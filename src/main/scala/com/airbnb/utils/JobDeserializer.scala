@@ -89,6 +89,11 @@ class JobDeserializer extends JsonDeserializer[BaseJob] {
       }
     }
 
+    // Adding config param to the Chronos job
+    val config =
+        if (node.has("config") && node.get("config") != null) node.get("config").asText
+      else ""
+
     val highPriority =
       if (node.has("highPriority") && node.get("highPriority") != null) node.get("highPriority").asBoolean()
       else false
@@ -102,13 +107,13 @@ class JobDeserializer extends JsonDeserializer[BaseJob] {
         name = name, command = command, epsilon = epsilon, successCount = successCount, errorCount = errorCount,
         executor = executor, executorFlags = executorFlags, retries = retries, owner = owner, lastError = lastError,
         lastSuccess = lastSuccess, async = async, cpus = cpus, disk = disk, mem = mem, disabled = disabled,
-        uris = uris, highPriority = highPriority)
+        uris = uris, highPriority = highPriority, config = config)
     } else if (node.has("schedule")) {
       new ScheduleBasedJob(node.get("schedule").asText, name = name, command = command,
         epsilon = epsilon, successCount = successCount, errorCount = errorCount, executor = executor,
         executorFlags = executorFlags, retries = retries, owner = owner, lastError = lastError,
         lastSuccess = lastSuccess, async = async, cpus = cpus, disk = disk, mem = mem, disabled = disabled,
-        uris = uris,  highPriority = highPriority)
+        uris = uris,  highPriority = highPriority, config = config)
     } else {
       throw new IllegalStateException("The job found was neither schedule based nor dependency based.")
     }
