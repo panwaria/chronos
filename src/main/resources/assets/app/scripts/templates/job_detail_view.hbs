@@ -49,7 +49,7 @@
          </textarea>
          
          <div class="field cmd">
-             <textarea rows="3" cols="50" class="job-input" value="{{config}}" data-rv-value="job.config" name="config"/>
+             <textarea rows="3" cols="50" class="job-input" value="{{config}}" data-rv-value="job.config" name="config" tabindex="3"/>
          </div>
          
          <span class="help-inline hide"></span>
@@ -68,7 +68,7 @@
                  data-placeholder="Choose parents..."
                  name="parents"
                  type="hidden"
-                 tabindex="3">
+                 tabindex="4">
         </div>
         <span class="help-inline hide"></span>
       </div>
@@ -85,7 +85,7 @@
           <div class="display hightlight owner"
                data-rv-text="job.owner">{{owner}}</div>
           <div class="field cmd">
-            <input class="job-input" value="{{owner}}" name="owner" tabindex="4"
+            <input class="job-input" value="{{owner}}" name="owner" tabindex="5"
                    data-rv-value="job.owner">
           </div>
           <span class="help-inline hide"></span>
@@ -147,7 +147,7 @@
            data-rv-text="job.schedule">{{schedule}}</div>
       <div class="field cmd small-input repeats control-group">
         <label for="repeats" class="control-label">R</label>
-        <input class="job-input" value="{{repeats}}" name="repeats" tabindex="6"
+        <input class="job-input" value="{{repeats}}" name="repeats" tabindex="7"
          data-rv-value="job.repeats"
          placeholder="∞" data-placeholder="∞"
          data-title="Number of Repetitions<br>Blank for Infinite (∞), 0 for none."
@@ -160,7 +160,7 @@
       <div class="field cmd small-input control-group">
         <input class="job-input datepicker" value="{{startDate}}"
           data-rv-value="job.startDate"
-          name="startDate" tabindex="7"
+          name="startDate" tabindex="8"
           data-title="Date to start the job."
           data-toggle="tooltip">
       </div>
@@ -168,7 +168,7 @@
       <div class="small-input break">T</div>
 
       <div class="field cmd small-input bootstrap-timepicker control-group">
-        <input class="job-input timepicker" value="{{startTime}}" name="startTime" tabindex="8"
+        <input class="job-input timepicker" value="{{startTime}}" name="startTime" tabindex="9"
           data-rv-value="job.startTime"
           data-title="Time to start the job."
           data-toggle="tooltip"
@@ -182,7 +182,7 @@
 
       <div class="field cmd small-input period control-group">
         <label for="duration" class="control-label">P</label>
-        <input class="job-input" value="{{duration}}" name="duration" tabindex="9"
+        <input class="job-input" value="{{duration}}" name="duration" tabindex="10"
           data-rv-value="job.duration"
           data-title="Duration<br>The job will execute at every passing of duration from start time."
           data-html="true"
@@ -220,7 +220,7 @@
                      value="{{executor}}"
                      name="executor"
                      placeholder="/custom/executor"
-                     tabindex="5">
+                     tabindex="6">
             </div>
           </div>
         </div>
@@ -230,7 +230,7 @@
           <div class="detail">Epsilon</div>
           <div class="display highlight cmd epsilon">{{epsilon}}</div>
           <div class="field cmd epsilon control-group">
-            <input class="job-input" value="{{epsilon}}" name="epsilon" tabindex="10"
+            <input class="job-input" value="{{epsilon}}" name="epsilon" tabindex="11"
               title="Amount of time after a failure within which to retry the job."
               data-rv-value="job.epsilon"
               data-container=".job-{{cid}}"
