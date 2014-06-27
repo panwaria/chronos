@@ -83,3 +83,55 @@ EndOfStreamException: Unable to read additional data from client sessionid 0x146
 2014-06-26 17:32:47,855 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /0:0:0:0:0:0:0:1:46945
 2014-06-26 17:32:47,932 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x146da2642330007 with negotiated timeout 10000 for client /0:0:0:0:0:0:0:1:46944
 2014-06-26 17:32:47,938 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x146da2642330008 with negotiated timeout 10000 for client /0:0:0:0:0:0:0:1:46945
+2014-06-26 18:15:29,202 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f4b zxid:0x60a txntype:-1 reqpath:n/a Error Path:/chronos Error:KeeperErrorCode = NodeExists for /chronos
+2014-06-26 18:15:29,287 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f4c zxid:0x60b txntype:-1 reqpath:n/a Error Path:/chronos/state Error:KeeperErrorCode = NodeExists for /chronos/state
+2014-06-26 18:15:29,290 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f4d zxid:0x60c txntype:-1 reqpath:n/a Error Path:/chronos/state/state Error:KeeperErrorCode = NodeExists for /chronos/state/state
+2014-06-26 18:15:29,617 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f54 zxid:0x60f txntype:-1 reqpath:n/a Error Path:/chronos Error:KeeperErrorCode = NodeExists for /chronos
+2014-06-26 18:15:29,621 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f55 zxid:0x610 txntype:-1 reqpath:n/a Error Path:/chronos/state Error:KeeperErrorCode = NodeExists for /chronos/state
+2014-06-26 18:15:29,664 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f56 zxid:0x611 txntype:-1 reqpath:n/a Error Path:/chronos/state/state Error:KeeperErrorCode = NodeExists for /chronos/state/state
+2014-06-26 18:15:29,721 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f5d zxid:0x614 txntype:-1 reqpath:n/a Error Path:/chronos Error:KeeperErrorCode = NodeExists for /chronos
+2014-06-26 18:15:29,723 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f5e zxid:0x615 txntype:-1 reqpath:n/a Error Path:/chronos/state Error:KeeperErrorCode = NodeExists for /chronos/state
+2014-06-26 18:15:29,725 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330004 type:create cxid:0x53ac9f5f zxid:0x616 txntype:-1 reqpath:n/a Error Path:/chronos/state/state Error:KeeperErrorCode = NodeExists for /chronos/state/state
+2014-06-26 19:07:47,353 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x146da2642330006
+2014-06-26 19:07:47,572 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@357] - caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x146da2642330006, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-26 19:07:47,725 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1007] - Closed socket connection for client /127.0.0.1:49565 which had sessionid 0x146da2642330006
+2014-06-26 19:07:48,147 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@357] - caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x146da2642330004, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-26 19:07:48,171 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1007] - Closed socket connection for client /127.0.0.1:49557 which had sessionid 0x146da2642330004
+2014-06-26 19:07:58,000 [myid:] - INFO  [SessionTracker:ZooKeeperServer@347] - Expiring session 0x146da2642330004, timeout of 10000ms exceeded
+2014-06-26 19:07:58,010 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x146da2642330004
+2014-06-26 19:07:59,559 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@197] - Accepted socket connection from /127.0.0.1:51951
+2014-06-26 19:07:59,573 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@822] - Connection request from old client /127.0.0.1:51951; will be dropped if server is in r-o mode
+2014-06-26 19:07:59,574 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /127.0.0.1:51951
+2014-06-26 19:07:59,607 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x146da2642330009 with negotiated timeout 10000 for client /127.0.0.1:51951
+2014-06-26 19:08:10,665 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@197] - Accepted socket connection from /0:0:0:0:0:0:0:1:49254
+2014-06-26 19:08:10,665 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /0:0:0:0:0:0:0:1:49254
+2014-06-26 19:08:10,677 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x146da264233000a with negotiated timeout 40000 for client /0:0:0:0:0:0:0:1:49254
+2014-06-26 19:08:11,454 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x146da264233000a
+2014-06-26 19:08:11,479 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1007] - Closed socket connection for client /0:0:0:0:0:0:0:1:49254 which had sessionid 0x146da264233000a
+2014-06-26 19:08:11,492 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@197] - Accepted socket connection from /127.0.0.1:51965
+2014-06-26 19:08:11,497 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@868] - Client attempting to establish new session at /127.0.0.1:51965
+2014-06-26 19:08:11,501 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@617] - Established session 0x146da264233000b with negotiated timeout 40000 for client /127.0.0.1:51965
+2014-06-26 19:10:59,113 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5ef zxid:0x627 txntype:-1 reqpath:n/a Error Path:/chronos Error:KeeperErrorCode = NodeExists for /chronos
+2014-06-26 19:10:59,258 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5f0 zxid:0x628 txntype:-1 reqpath:n/a Error Path:/chronos/state Error:KeeperErrorCode = NodeExists for /chronos/state
+2014-06-26 19:10:59,282 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5f1 zxid:0x629 txntype:-1 reqpath:n/a Error Path:/chronos/state/state Error:KeeperErrorCode = NodeExists for /chronos/state/state
+2014-06-26 19:10:59,920 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5f5 zxid:0x62b txntype:-1 reqpath:n/a Error Path:/chronos Error:KeeperErrorCode = NodeExists for /chronos
+2014-06-26 19:10:59,934 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5f6 zxid:0x62c txntype:-1 reqpath:n/a Error Path:/chronos/state Error:KeeperErrorCode = NodeExists for /chronos/state
+2014-06-26 19:10:59,958 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x146da2642330009 type:create cxid:0x53acb5f7 zxid:0x62d txntype:-1 reqpath:n/a Error Path:/chronos/state/state Error:KeeperErrorCode = NodeExists for /chronos/state/state
+2014-06-26 19:11:32,611 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x146da264233000b
+2014-06-26 19:11:33,318 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1007] - Closed socket connection for client /127.0.0.1:51965 which had sessionid 0x146da264233000b
+2014-06-26 19:11:34,354 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@357] - caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x146da2642330009, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:744)
+2014-06-26 19:11:34,380 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1007] - Closed socket connection for client /127.0.0.1:51951 which had sessionid 0x146da2642330009
+2014-06-26 19:11:44,000 [myid:] - INFO  [SessionTracker:ZooKeeperServer@347] - Expiring session 0x146da2642330009, timeout of 10000ms exceeded
+2014-06-26 19:11:44,008 [myid:] - INFO  [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x146da2642330009

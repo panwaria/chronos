@@ -10,6 +10,7 @@ import org.apache.mesos.Protos.Environment.Variable
 import scala.collection.Map
 import javax.inject.Inject
 import com.airbnb.scheduler.config.SchedulerConfiguration
+
 import scala.collection.JavaConverters._
 
 /**
@@ -84,6 +85,9 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
         .setName("mesos_task_id").setValue(taskIdStr))
       .addVariables(Variable.newBuilder()
         .setName("CHRONOS_JOB_OWNER").setValue(job.owner))
+      .addVariables(Variable.newBuilder()
+        .setName("CHRONOS_JOB_CONFIG").setValue(job.config))
+
     if (!job.executor.isEmpty) {
       appendExecutorData(taskInfo, job)
     } else {
