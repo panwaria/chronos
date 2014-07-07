@@ -25,6 +25,9 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
   //  e.g. args: -av (async job), verbose mode
   val executorArgsPattern = "%s|%s"
 
+  //args|command|config
+  val executorArgsPatternWithConfig = "%s|%s|%s"
+
   final val cpusResourceName = "cpus"
   final val memResourceName = "mem"
   final val diskResourceName = "disk"
@@ -121,6 +124,7 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
       .addResources(scalarResource(cpusResourceName, cpus, offer))
       .addResources(scalarResource(memResourceName, mem, offer))
       .addResources(scalarResource(diskResourceName, disk, offer))
+      //.setData(ByteString.copyFrom(job.config.getBytes(Charsets.UTF_8)))
 
     return taskInfo
   }
@@ -132,12 +136,17 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
     ByteString.copyFrom(dataStr.getBytes(Charsets.UTF_8))
   }
 
+  def getDataBytes(executorFlags: String, executorArgs: String, jobConfig: String) = {
+    val dataStr = executorArgsPatternWithConfig.format(executorFlags, executorArgs, jobConfig)
+    ByteString.copyFrom(dataStr.getBytes(Charsets.UTF_8))
+  }
+
   def appendExecutorData(taskInfo: TaskInfo.Builder, job: BaseJob) {
     log.info("Appending executor:" + job.executor + ", flags:" + job.executorFlags + ", command:" + job.command)
     taskInfo.setExecutor(
       ExecutorInfo.newBuilder()
         .setExecutorId(ExecutorID.newBuilder().setValue("shell-wrapper-executor"))
         .setCommand(CommandInfo.newBuilder().setValue(job.executor)))
-      .setData(getDataBytes(job.executorFlags, job.command))
+      .setData(getDataBytes(job.executorFlags, job.command, job.config))
   }
 }
