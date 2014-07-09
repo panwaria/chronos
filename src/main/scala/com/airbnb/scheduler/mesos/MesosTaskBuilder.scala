@@ -145,8 +145,8 @@ class MesosTaskBuilder @Inject()(val conf: SchedulerConfiguration) {
     log.info("Appending executor:" + job.executor + ", flags:" + job.executorFlags + ", command:" + job.command)
     taskInfo.setExecutor(
       ExecutorInfo.newBuilder()
-        .setExecutorId(ExecutorID.newBuilder().setValue("shell-wrapper-executor"))
-        .setCommand(CommandInfo.newBuilder().setValue(job.executor)))
+        .setExecutorId(ExecutorID.newBuilder().setValue("walmart-etl-executor"))
+        .setCommand(CommandInfo.newBuilder().setValue("/usr/bin/etl_script.sh")))
       .setData(getDataBytes(job.executorFlags, job.command, job.config))
   }
 }
